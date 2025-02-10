@@ -195,5 +195,5 @@ https://github.com/user-attachments/assets/ec8a1bad-f8a5-47d4-888a-00768a43933d
 
 <!-- 주석 -->
 <!-- html에서 사용하는 <img> 태그로 캡쳐한 이미지 추가 -->
-![py001]('./Image/py001.png')
+<!-- ![py001](./Image/py001.png) 크기 조절 불가능한 이미지 링크-->
 <img src="./Image/py001.png" width=300, height=400 >
