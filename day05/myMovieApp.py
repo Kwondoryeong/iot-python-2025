@@ -28,9 +28,12 @@ def run():
             if sel_menu == 1:
                 # print('영화 입력')
                 # print('###################################')
-                movie = set_movie()
-                lst_movie.append(movie)
-                
+                try:
+                    movie = set_movie()
+                    lst_movie.append(movie)
+                    print('영화 입력 성공!')
+                except Exception as e:
+                    print(f'영화 입력 실패!! {e}')
             elif sel_menu == 2:
                 # print('영화 출력')
                 # print('###################################')
@@ -47,7 +50,7 @@ def run():
                 title = input('삭제할 영화명 입력 > ')
                 # print('###################################')
                 del_movie(lst_movie, title)
-
+                
             elif sel_menu == 5:
                 # print('앱 종료')
                 # 종료직전 DB생성하고 완료
@@ -79,17 +82,28 @@ def set_movie():
 def get_movie(items: list):
     for item in items:
         print(item) # Movie클래스 객체(print(movie))와 같음
+        print('----------') # 각 영화 아이템별 구분자
+
+    print(f'총 데이터수 : {len(items)}개')
 
 # 영화검색 함수
 def search_movie(items: list, title: str):
+    count = 0
     for item in items: # item이 Movie 클래스인지 알 수 없음
         if item.isNameContain(title):
+            count += 1 # 검색된 결과가 있음
             print(item)
+            print('----------')
+
+    print(f'검색된 결과 수 : {count}개' )
 
 def del_movie(items: list, title: str):
+   #  count = 0
     for i, item in enumerate(items): # enumerate 반복되는 번호 출력 '0' 인피니티 '1' 엔드게임 ..
         if item.isNameExist(title):
+           # count += 1 # 삭제된 결과 있음
             del items[i] # 인덱스로 리스트에 요소하나를 삭제
+        # print(f'영화가 삭제되었습니다.')
 
 # 폴더에 파일로 영화리스트 저장
 def save_movie(items: list):
