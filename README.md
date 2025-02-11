@@ -205,10 +205,12 @@ https://github.com/user-attachments/assets/ec8a1bad-f8a5-47d4-888a-00768a43933d
     - 실습
         - 제미나이 챗앱 -> **클래스형태**로 변경
 
+- 파이썬 응용
     - 실행파일 만들기
         - `pyinstaller` 모듈 설치
-        - > pip install pyinstaller
-        - > pyinstaller --onefile python_file.py
-        - 같이 실행되는터미널을 제거하려면
-        - > pyinstaller --onefile --noconsole 파이썬 파일명
-        - 아이콘 등의 리소스를 dist 폴더에 복사 필요
+            - pip install pyinstaller
+        - 실행파일 생성 명령어(터미널 실행)
+            - pyinstaller --onefile python_file.py
+            - 같이 실행되는터미널을 제거하려면
+            - pyinstaller --onefile --noconsole 파이썬 파일명
+            - 아이콘 등의 리소스를 dist 폴더에 복사 필요
