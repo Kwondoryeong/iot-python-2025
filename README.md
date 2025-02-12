@@ -218,3 +218,11 @@ https://github.com/user-attachments/assets/457ef153-8770-4dd8-b1f4-245ccac15f94
             - 같이 실행되는터미널을 제거하려면
             - pyinstaller --onefile --noconsole 파이썬 파일명
             - 아이콘 등의 리소스를 dist 폴더에 복사 필요
+
+## 8일차
+- 파이썬 응용
+    - GUI 중 PyGame
+        - 기본 윈도우 학습
+        - 이벤트 처리
+        - 간단한 게임
+        - 이미지, 사운드 등 리소스 활용 게임
