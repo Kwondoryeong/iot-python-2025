@@ -11,11 +11,11 @@ SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 800
 
 class Block:
-    def __init__(self, col, rect, speed=0):
+    def __init__(self, col, rect, speed = 0):
         self.col = col
         self.rect = rect
         self.speed = speed
-        self.dir = random.randint(-45, 45) + 270 # 225 ~ 315
+        self.dir = random.randint(-45, 45) + 90 # 225 ~ 315
 
     def move(self): # 볼 무브
         # 볼이 움직이는 x축 값을 계속 계산하려면 x는 dir 값을 라디언으로 변환 후 코사인처리
@@ -125,7 +125,13 @@ def main():
             if BALL.rect.centery > 800:
                 Surface.blit(M_FAIL, ((SCREEN_WIDTH / 2) - (240 / 2), 
                                       (SCREEN_HEIGHT / 2) - ( 50 / 2)))
-                # is_game_start = False 게임 종료 후 재시작 나중에 다시!
+                is_game_start = False  # 게임 종료 후 재시작은 나중에 다시!!
+                BALL = Block((200,200,0), Rect(375,650,20,20), 10) # 공을 새로 생성
+                PADDLE = Block((200, 200, 0), Rect(375, 670, 100, 30)) # 공을 맞출 패달 생성
+                for y, color in enumerate(colors, start=0): # y값은 0 ~ 6
+                    for x in range(0, 9):
+                        BLOCK.append(Block(color, Rect(x * 80 + 150, y * 40 + 40, 60, 20)))
+
             BALL.draw_E()
             PADDLE.draw_R()
             # Surface.blit(M_CLEAR, (80,280))
